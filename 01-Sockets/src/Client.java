@@ -14,7 +14,7 @@ public class Client {
   public void connecta() {
     try {
       socket = new Socket(HOST, PORT);
-      out = new PrintWriter(socket.getOutputStream());
+      out = new PrintWriter(socket.getOutputStream(), true); // Activem autoflush
       System.out.println("Connectat al servidor en " + HOST + ":" + PORT);
     } catch (Exception e) {
       e.printStackTrace();
@@ -58,12 +58,7 @@ public static void main(String[] args) {
       e.printStackTrace();
     }
 
-    Scanner scanner = new Scanner(System.in);
-    scanner.nextLine();
-
     client.tanca();
-
-    scanner.close();
   }
 
 
