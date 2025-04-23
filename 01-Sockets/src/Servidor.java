@@ -47,7 +47,7 @@ public class Servidor {
   }
 
   public static void main(String[] args) {
-    Servidor srv = new Servidor();
+    ServidorXat srv = new ServidorXat();
     srv.connecta();
     srv.repDades();
     srv.tanca();
