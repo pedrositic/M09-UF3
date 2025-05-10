@@ -6,8 +6,8 @@ import java.net.Socket;
 import java.util.Scanner;
 
 public class Client {
-  public static final int PORT = ServidorXat.PORT;
-  public static final String HOST = ServidorXat.HOST;
+  public static final int PORT = Servidor.PORT;
+  public static final String HOST = Servidor.HOST;
   private Socket socket;
   private PrintWriter out;
 
@@ -39,7 +39,7 @@ public class Client {
   }
 
 public static void main(String[] args) {
-    ClientXat client = new ClientXat();
+    Client client = new Client();
 
     client.connecta();
 
