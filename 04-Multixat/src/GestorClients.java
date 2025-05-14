@@ -76,6 +76,17 @@ public class GestorClients extends Thread {
         servidorXat.finalitzarXat();
         break;
 
+      case Missatge.CODI_MSG_PERSONAL:
+        String destinatari = Missatge.getPartsMissatge(missatgeRaw)[1];
+        String missatge = Missatge.getPartsMissatge(missatgeRaw)[2];
+        servidorXat.enviarMissatgePersonal(destinatari, this.nom, missatge);
+        break;
+
+      case Missatge.CODI_MSG_GRUP:
+        String missatgeGrup = Missatge.getPartsMissatge(missatgeRaw)[1];
+        servidorXat.enviarMissatgeGrup(Missatge.getMissatgeGrup(this.nom + ": " + missatgeGrup));
+        break;
+
       default:
         System.out.println("Codi desconegut: " + codi);
         break;
